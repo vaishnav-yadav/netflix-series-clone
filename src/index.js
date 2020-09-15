@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Card from './Card';
 import SeriesData from './Sdata';
 import './index.css';
+// import logo from './logo.png';
+// import logo from './public/logo';
 
 //-------------------WE have created props here : i.e, through props we can create custom attributes by our own just like we have created custom elements by components. It becomes easier to add new cards now. We just have to change these attributes only.
 
@@ -40,54 +42,56 @@ import './index.css';
   // Halaki hum baaki jsx elements me istemaal kar sakte hai eg : h1 here :-
 
 
-ReactDOM.render( 
-      <>
-        <h1 className="PageHeading">List of Top Highest rated Netfilx Series</h1>
-        <hr></hr>
-        <div className="cards">
-         <Card 
-          imgsrc={SeriesData[0].imgsrc}
-          sname={SeriesData[0].sname}
-          title={SeriesData[0].title}
-          link={SeriesData[0].link}>
-         </Card>
-          <Card 
-          imgsrc={SeriesData[1].imgsrc}
-          sname={SeriesData[1].sname}
-          title={SeriesData[1].title}
-          link={SeriesData[1].link}>
-         </Card>
-         <Card 
-          imgsrc={SeriesData[3].imgsrc}
-          sname={SeriesData[3].sname}
-          title={SeriesData[3].title}
-          link={SeriesData[3].link}>
-         </Card> 
-         <Card 
-          imgsrc={SeriesData[4].imgsrc}
-          sname={SeriesData[4].sname}
-          title={SeriesData[4].title}
-          link={SeriesData[4].link}>
-         </Card> 
-         <Card 
-          imgsrc={SeriesData[5].imgsrc}
-          sname={SeriesData[5].sname}
-          title={SeriesData[5].title}
-          link={SeriesData[5].link}>
-         </Card> 
-         <Card 
-          imgsrc={SeriesData[2].imgsrc}
-          sname={SeriesData[2].sname}
-          title={SeriesData[2].title}
-          link={SeriesData[2].link}>
-         </Card> 
-         
-        
-         </div>
-      </>
+// ReactDOM.render( 
+//       <>
+//         <div className="PageHeading">
+//         <h1 className="heading">List of Top Highest rated Netfilx Series</h1>
+//         <img src={process.env.PUBLIC_URL + '/logo.png' } className="logoImg" />
+//         </div>
+//         <hr className="hr"></hr>
+//         <div className="cards">
+//          <Card 
+//           imgsrc={SeriesData[0].imgsrc}
+//           sname={SeriesData[0].sname}
+//           title={SeriesData[0].title}
+//           link={SeriesData[0].link}>
+//          </Card>
+//           <Card 
+//           imgsrc={SeriesData[1].imgsrc}
+//           sname={SeriesData[1].sname}
+//           title={SeriesData[1].title}
+//           link={SeriesData[1].link}>
+//          </Card>
+//          <Card 
+//           imgsrc={SeriesData[3].imgsrc}
+//           sname={SeriesData[3].sname}
+//           title={SeriesData[3].title}
+//           link={SeriesData[3].link}>
+//          </Card> 
+//          <Card 
+//           imgsrc={SeriesData[4].imgsrc}
+//           sname={SeriesData[4].sname}
+//           title={SeriesData[4].title}
+//           link={SeriesData[4].link}>
+//          </Card> 
+//          <Card 
+//           imgsrc={SeriesData[5].imgsrc}
+//           sname={SeriesData[5].sname}
+//           title={SeriesData[5].title}
+//           link={SeriesData[5].link}>
+//          </Card> 
+//          <Card 
+//           imgsrc={SeriesData[2].imgsrc}
+//           sname={SeriesData[2].sname}
+//           title={SeriesData[2].title}
+//           link={SeriesData[2].link}>
+//          </Card> 
+       
+//          </div>
+//       </>
 
-      , document.getElementById('root')
-);
+//       , document.getElementById('root')
+// );
 
 
 
@@ -96,4 +100,30 @@ ReactDOM.render(
 
 //-------------------map method for auto iteration of all the array objects of SeriesData ----------------
 
+
+ReactDOM.render( 
+        <>
+          <div className="PageHeading">
+          <h1 className="heading">List of Top Highest rated Netfilx Series</h1>
+          <img src={process.env.PUBLIC_URL + '/logo.png' } className="logoImg" />
+          </div>
+          <hr className="hr"></hr>
+          <div className="cards">
+            { SeriesData.map(function ncard(val) {
+               return (
+                <Card 
+                imgsrc={val.imgsrc}
+                sname={val.sname}
+                title={val.title}
+                link={val.link}>
+               </Card>
+               )
+               
+             })}
+         
+           </div>
+        </>
+  
+        , document.getElementById('root')
+  );
 
