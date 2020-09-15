@@ -42,7 +42,7 @@ import './index.css';
 
 ReactDOM.render( 
       <>
-        <h1 className="PageHeading">List of Top 3 Highest rated Netfilx Series</h1>
+        <h1 className="PageHeading">List of Top Highest rated Netfilx Series</h1>
         <hr></hr>
         <div className="cards">
          <Card 
@@ -58,11 +58,31 @@ ReactDOM.render(
           link={SeriesData[1].link}>
          </Card>
          <Card 
+          imgsrc={SeriesData[3].imgsrc}
+          sname={SeriesData[3].sname}
+          title={SeriesData[3].title}
+          link={SeriesData[3].link}>
+         </Card> 
+         <Card 
+          imgsrc={SeriesData[4].imgsrc}
+          sname={SeriesData[4].sname}
+          title={SeriesData[4].title}
+          link={SeriesData[4].link}>
+         </Card> 
+         <Card 
+          imgsrc={SeriesData[5].imgsrc}
+          sname={SeriesData[5].sname}
+          title={SeriesData[5].title}
+          link={SeriesData[5].link}>
+         </Card> 
+         <Card 
           imgsrc={SeriesData[2].imgsrc}
           sname={SeriesData[2].sname}
           title={SeriesData[2].title}
           link={SeriesData[2].link}>
          </Card> 
+         
+        
          </div>
       </>
 
