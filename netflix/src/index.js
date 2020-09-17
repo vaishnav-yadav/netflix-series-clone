@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './Card';
-import SeriesData from './Sdata';
 import './index.css';
+import App from './App';
+// import Card from './Card';
+// import SeriesData from './Sdata';
+
 // import logo from './logo.png';
 // import logo from './public/logo';
 
@@ -101,27 +103,41 @@ import './index.css';
 //-------------------map method for auto iteration of all the array objects of SeriesData ----------------
 
 
+// ReactDOM.render( 
+//         <>
+//           <div className="PageHeading">
+//           <h1 className="heading">List of Top Highest rated Netfilx Series</h1>
+//           <img src={process.env.PUBLIC_URL + '/logo.png' } className="logoImg" />
+//           </div>
+//           <hr className="hr"></hr>
+//           <div className="cards">
+//             { SeriesData.map(function ncard(val) {
+//                return (
+//                 <Card 
+//                 key={val.id}
+//                 imgsrc={val.imgsrc}
+//                 sname={val.sname}
+//                 title={val.title}
+//                 link={val.link}>
+//                </Card>
+//                )
+               
+//              })}
+         
+//            </div>
+//         </>
+  
+//         , document.getElementById('root')
+//   );
+
+
+
+
+//making App component 
+
 ReactDOM.render( 
         <>
-          <div className="PageHeading">
-          <h1 className="heading">List of Top Highest rated Netfilx Series</h1>
-          <img src={process.env.PUBLIC_URL + '/logo.png' } className="logoImg" />
-          </div>
-          <hr className="hr"></hr>
-          <div className="cards">
-            { SeriesData.map(function ncard(val) {
-               return (
-                <Card 
-                imgsrc={val.imgsrc}
-                sname={val.sname}
-                title={val.title}
-                link={val.link}>
-               </Card>
-               )
-               
-             })}
-         
-           </div>
+         <App></App>
         </>
   
         , document.getElementById('root')

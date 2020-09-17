@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Images from './Images';
+import Card_info from './Card_info';
 
 //To access props :- 
 function Card(props) {
@@ -7,14 +8,10 @@ function Card(props) {
   return (
     <>
       <div className="card">
-        <img src={props.imgsrc} alt="mypic" className="card-img"></img>
-        <div className="card__info">
-          <span className="card__category">{props.title}</span>
-          <h3 className="card__title">{props.sname}</h3>
-          <a href={props.link} target="_blank">
-            <button> Watch Now</button>
-          </a>
-        </div>
+        {/* <img src={props.imgsrc} alt="mypic" className="card-img"></img> */}
+        {/* creating component of image */}
+        <Images imgsrc={props.imgsrc}></Images>
+        <Card_info sname={props.sname} title={props.title} link={props.link}></Card_info>
       </div>
     </>
   );
